@@ -1,0 +1,37 @@
+use the METABRIC dataset, design three different CNNs for all
+the three modalities of data. These CNNs
+are termed as CNN-Clinical, CNN-Expr, and
+CNN-CNA for clinical, gene expression and
+CNA dataset, respectively.
+
+Train the CNNs are on each uni-modal dataset individually by setting the AUC value
+as the performance measurement criteria.
+Extract either hidden features or the predicted output from each of the trained CNN
+and concatenate these features to form the stacked feature set.
+
+Pass stacked features extracted from stage one as the input to stage two of the model.
+SVM (support vector machine), RF (random forest), NB(Naive Bayes) and LR(Logistic Regression) are used in stage two of the model one by one and performance is measured for each one of them.
+
+Perform ten-fold cross-validation
+to evaluate the proposed model. divide the 1980 patients in our
+dataset randomly into 10 subsets, out of which
+9 subsets should be merged and considered as the training set
+while remaining one subset should be regarded as the testing set
+one after the other. The further training set should be divided into
+80% training set and 20% validation set. Firstly, 
+train individual CNN for each modality of data and fix the
+optimal parameters by using AUC value as the criterion.
+Secondly,  extract the outputs from either the hidden
+layer or output layer of each CNN and combine them to
+form the stacked feature set. At last, these stacked features
+should be passed to stage two of the stacked-based model, which
+itself is a machine learning model such as SVM, RF, Naive
+Bayes and LR.
+
+Predict outputs of different DNN models concatenated together to form stacked features.
+The weights from the hidden layer (the layer before
+the output layer) of each DNN model should be multiplied
+by their respective AUC values and then concatenated together to form stacked features.
+The predicted outputs of different DNN models should be
+multiplied by their respective AUC values and then
+concatenated together to form stacked features.
